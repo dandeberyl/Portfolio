@@ -70,10 +70,8 @@
   </footer>
 
   <script>
-    // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Toggle nav menu
     const navToggle = document.getElementById('nav-toggle');
     const nav = document.getElementById('primary-nav');
     navToggle.addEventListener('click', () => {
@@ -82,7 +80,6 @@
       nav.style.display = expanded ? 'none' : 'block';
     });
 
-    // Handle contact form submission
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
     form.addEventListener('submit', (e) => {
