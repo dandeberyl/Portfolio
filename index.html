@@ -4,41 +4,39 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Beryl — Portfolio</title>
-  <meta name="description" content="Portfolio of Beryl — web developer & designer. Built with semantic HTML5" />
+  <meta name="description" content="Portfolio of Beryl — web developer & designer. Built with HTML5" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div>
-      <a href="#">Beryl</a>
-      <button id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <nav id="primary-nav" aria-label="Primary" style="display: none;">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <aside class="sidebar">
+    <a href="#" class="brand">Beryl</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <img src="buttermoon.jpeg" alt="Beryl's profile picture" class="profile-pic">
 
   <main>
     <section id="home" aria-labelledby="hero-heading">
-      <div>
-        <h1 id="hero-heading">Hi — I'm Beryl. I build delightful web experiences.</h1>
-        <img src="buttermoon.jpeg" alt="Beryl's profile picture">
-        <p>Front-end developer focused on accessible, performance-minded web apps.</p>
-      </div>
+      <h1 id="hero-heading">Hi — I'm Beryl.</h1>
+      <p>Front-end developer focused on accessible and performance-minded web apps.</p>
     </section>
 
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
-      <p>I'm a web developer with a passion for semantic HTML, thoughtful CSS architecture and accessible UI.</p>
+      <p>I'm a web developer with a passion for HTML, CSS architecture and accessible UI.</p>
     </section>
 
     <section id="skills" aria-labelledby="skills-heading">
       <h2 id="skills-heading">Skills</h2>
       <ul>
-        <li>HTML5 & semantic markup</li>
+        <li>HTML5</li>
         <li>Responsive design (CSS Grid)</li>
         <li>Designing using Figma</li>
       </ul>
@@ -46,47 +44,19 @@
 
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
-      <form id="contact-form" novalidate>
-        <label for="name">Name</label>
-        <input id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-        <p id="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <p>Email: <a href="mailto:dandeberyl@gmail.com">dandeberyl@gmail.com</a></p>
+      <p>Phone: +254 705583040</p>
+      <p>Location: Nairobi, Kenya</p>
     </section>
   </main>
 
   <footer>
-    <div>
-      <p>&copy; <span id="year"></span> Beryl — Built with HTML5.</p>
-      <p><a href="https://github.com/dandeberyl/html5-portfolio">GitHub repo</a></p>
-    </div>
+    <p>&copy; <span id="year"></span> Beryl — Built with HTML5.</p>
+    <p><a href="https://github.com/dandeberyl/Portfolio.git">GitHub</a></p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const navToggle = document.getElementById('nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      nav.style.display = expanded ? 'none' : 'block';
-    });
-
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      status.textContent = "Thanks for your message, Beryl will reply soon!";
-      form.reset();
-    });
   </script>
 </body>
 </html>
